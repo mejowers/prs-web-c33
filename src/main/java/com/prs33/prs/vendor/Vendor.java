@@ -23,15 +23,19 @@ public class Vendor {
 	private String name;
 	@Column(length=30, nullable=false)
 	private String address;
+	@Column(length=30, nullable=false)
+	private String city;
 	@Column(length=2, nullable=false)
 	private String state;
+	@Column(length=5, nullable=false)
+	private String zip;
 	@Column(length=15)
 	private String phone;
 	@Column(length=255)
 	private String email;
 	
 	public Vendor() {}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -64,12 +68,28 @@ public class Vendor {
 		this.address = address;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	public String getState() {
 		return state;
 	}
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getZip() {
+		return zip;
+	}
+
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 
 	public String getPhone() {
@@ -87,12 +107,6 @@ public class Vendor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
-	
-	
-	
-	
 	
 
 }

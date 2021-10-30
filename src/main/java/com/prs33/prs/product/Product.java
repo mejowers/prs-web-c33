@@ -23,7 +23,7 @@ public class Product {
 	private int id;
 	@Column(length=30, nullable=false )
 	private String partNbr;
-	@Column(length=30, nullable=false)
+	@Column(length=155, nullable=false)
 	private String name;
 	@Column(columnDefinition="decimal(10,2) NOT NULL DEFAULT 0.0")
 	private double price;
@@ -33,8 +33,9 @@ public class Product {
 	private String photoPath;
 	
 	@ManyToOne(optional=false)
-	@JoinColumn(name="vendorId")
+	@JoinColumn(name="vendorId", nullable=false)
 	private Vendor vendor;
+	
 
 	public Product() {
 		super();
@@ -98,10 +99,4 @@ public class Product {
 	
 	
 	
-	
-	
-	
-	
-	
-
 }

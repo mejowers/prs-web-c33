@@ -1,4 +1,4 @@
-package com.prs33.prs.requestLines;
+package com.prs33.prs.request;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,9 +15,9 @@ import com.prs33.prs.user.User;
 
 
 @Entity
-@Table(name="requestLines")
+@Table(name="requests")
 
-public class RequestLine {
+public class Request {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -27,9 +27,10 @@ public class RequestLine {
 	private String description;
 	@Column(length=80, nullable=false)
 	private String justification;
-	@Column(length=80, nullable=false)
+	@Column(length=80)
 	private String rejectionReason;
 	@Column(length=20, nullable=false)
+	@Value("Pickup")
 	private String deliveryMode;
 	@Column(length=10, nullable=false)
 	@Value("New")
@@ -38,10 +39,10 @@ public class RequestLine {
 	private double total;
 	
 	@ManyToOne
-	@JoinColumn(name="userId")
+	@JoinColumn(name="userId", nullable=false)
 	private User user;
 
-	public RequestLine() {
+	public Request() {
 		super();
 	}
 
